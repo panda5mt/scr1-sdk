@@ -1,0 +1,242 @@
+
+Discarded input sections
+
+ .text          0x0000000000000000        0x0 build.de10lite_scr1/riscv_main.o
+ .data          0x0000000000000000        0x0 build.de10lite_scr1/riscv_main.o
+ .bss           0x0000000000000000        0x0 build.de10lite_scr1/riscv_main.o
+ .text          0x0000000000000000        0x0 build.de10lite_scr1/uart.o
+ .data          0x0000000000000000        0x0 build.de10lite_scr1/uart.o
+ .bss           0x0000000000000000        0x0 build.de10lite_scr1/uart.o
+ .text.uart_puthex16
+                0x0000000000000000       0x34 build.de10lite_scr1/uart.o
+ .text.uart_puthex64
+                0x0000000000000000       0x34 build.de10lite_scr1/uart.o
+ .rodata.uart_print_info.str1.4
+                0x0000000000000000       0x13 build.de10lite_scr1/uart.o
+ .text.uart_print_info
+                0x0000000000000000       0x88 build.de10lite_scr1/uart.o
+ .text.uart_puthex4
+                0x0000000000000000       0x34 build.de10lite_scr1/uart.o
+ .text.uart_read_hex
+                0x0000000000000000      0x14c build.de10lite_scr1/uart.o
+ .text.uart_read_str
+                0x0000000000000000       0xf8 build.de10lite_scr1/uart.o
+ .text          0x0000000000000000        0x0 build.de10lite_scr1/init.o
+ .data          0x0000000000000000        0x0 build.de10lite_scr1/init.o
+ .bss           0x0000000000000000        0x0 build.de10lite_scr1/init.o
+ .rodata.str1.4
+                0x0000000000000000       0x28 build.de10lite_scr1/init.o
+ .rodata.mem_regions
+                0x0000000000000000       0x60 build.de10lite_scr1/init.o
+ .comment       0x0000000000000000       0x12 build.de10lite_scr1/init.o
+ .riscv.attributes
+                0x0000000000000000       0x21 build.de10lite_scr1/init.o
+ .text          0x0000000000000000        0x0 build.de10lite_scr1/trap.o
+ .data          0x0000000000000000        0x0 build.de10lite_scr1/trap.o
+ .bss           0x0000000000000000        0x0 build.de10lite_scr1/trap.o
+ .text          0x0000000000000000        0x0 build.de10lite_scr1/leds.o
+ .data          0x0000000000000000        0x0 build.de10lite_scr1/leds.o
+ .bss           0x0000000000000000        0x0 build.de10lite_scr1/leds.o
+ .text.sc1f_leds_hex
+                0x0000000000000000       0x14 build.de10lite_scr1/leds.o
+ .text.sc1f_leds_hex_digit
+                0x0000000000000000       0x28 build.de10lite_scr1/leds.o
+ .rodata.leds_print_info.str1.4
+                0x0000000000000000       0x16 build.de10lite_scr1/leds.o
+ .text.leds_print_info
+                0x0000000000000000       0x6c build.de10lite_scr1/leds.o
+ .rodata.dips_print_info.str1.4
+                0x0000000000000000        0x8 build.de10lite_scr1/leds.o
+ .text.dips_print_info
+                0x0000000000000000       0x48 build.de10lite_scr1/leds.o
+ .rodata.HEX_DIGITS_TABLE
+                0x0000000000000000       0x10 build.de10lite_scr1/leds.o
+ .text          0x0000000000000000        0x0 build.de10lite_scr1/boot.o
+ .data          0x0000000000000000        0x0 build.de10lite_scr1/boot.o
+ .bss           0x0000000000000000        0x0 build.de10lite_scr1/boot.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+RAM              0x0000000000000000 0x0000000000010000 xrw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD build.de10lite_scr1/riscv_main.o
+LOAD build.de10lite_scr1/uart.o
+LOAD build.de10lite_scr1/init.o
+LOAD build.de10lite_scr1/trap.o
+LOAD build.de10lite_scr1/leds.o
+LOAD build.de10lite_scr1/boot.o
+LOAD /opt/riscv/lib/gcc/riscv64-unknown-elf/9.2.0/rv32im/ilp32/libgcc.a
+LOAD /opt/riscv/lib/gcc/riscv64-unknown-elf/9.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32/libc.a
+LOAD /opt/riscv/lib/gcc/riscv64-unknown-elf/9.2.0/rv32im/ilp32/libgcc.a
+START GROUP
+LOAD /opt/riscv/lib/gcc/riscv64-unknown-elf/9.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32/libc.a
+LOAD /opt/riscv/lib/gcc/riscv64-unknown-elf/9.2.0/../../../../riscv64-unknown-elf/lib/rv32im/ilp32/libgloss.a
+END GROUP
+LOAD /opt/riscv/lib/gcc/riscv64-unknown-elf/9.2.0/rv32im/ilp32/libgcc.a
+                0x0000000000000020                SEC_ALIGN = 0x20
+                0x0000000000001400                STACK_SIZE = 0x1400
+
+__start_of_ram  0x0000000000000000        0x0
+                0x0000000000000000                _end = .
+
+.stack          0x0000000000000000     0x1400
+                0x0000000000000000                __STACK_START__ = .
+                0x0000000000000000        0x4 LONG 0x0
+                0x0000000000001400                . = (. + (STACK_SIZE - 0x4))
+ *fill*         0x0000000000000004     0x13fc 
+                0x0000000000001400                __C_STACK_TOP__ = .
+                0x0000000000001400                __STACK_END__ = .
+
+.bss            0x0000000000001400        0x0
+                0x0000000000001400                __BSS_START__ = .
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ *(COMMON)
+
+.sbss           0x0000000000001400        0x0
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ *(.scommon)
+                0x0000000000001400                . = ALIGN (0x10)
+                0x0000000000001400                __BSS_END__ = .
+
+.sdata          0x0000000000001400        0x0
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+                0x0000000000001c00                __global_pointer$ = (. + 0x800)
+
+.data
+ *(.data .data.*)
+
+.tdata          0x0000000000001400        0x0
+                0x0000000000001400                _tls_data = .
+                0x0000000000001400                _tdata_begin = .
+ *(.tdata .tdata.*)
+                0x0000000000001400                _tdata_end = .
+                0x0000000000001400                . = ALIGN (0x10)
+
+.tbss           0x0000000000001400      0x180
+                0x0000000000001400                _tbss_begin = .
+ *(.tbss .tbss.*)
+ .tbss.hart_local_storage
+                0x0000000000001400      0x180 build.de10lite_scr1/trap.o
+                0x0000000000001400                hart_local_storage
+                0x0000000000001580                . = ALIGN (SEC_ALIGN)
+                0x0000000000001580                _tbss_end = .
+                0x0000000000000180                __TLS_SIZE__ = (_tbss_end - _tdata_begin)
+                0x0000000000001280                __TLS0_BASE__ = (__C_STACK_TOP__ - __TLS_SIZE__)
+
+.srodata
+ *(.srodata.cst16)
+ *(.srodata.cst8)
+ *(.srodata.cst4)
+ *(.srodata.cst2)
+ *(.srodata.*)
+
+.rodata         0x0000000000001400      0x18c
+ *(.rodata)
+ *(.rodata.*)
+ .rodata.main.str1.4
+                0x0000000000001400        0x5 build.de10lite_scr1/riscv_main.o
+ *fill*         0x0000000000001405        0x3 
+ .rodata.print_bad_trap.str1.4
+                0x0000000000001408       0x3f build.de10lite_scr1/trap.o
+ *fill*         0x0000000000001447        0x1 
+ .rodata.bad_trap.str1.4
+                0x0000000000001448        0x4 build.de10lite_scr1/trap.o
+ .rodata.bad_trap_handler.str1.4
+                0x000000000000144c        0xd build.de10lite_scr1/trap.o
+ *fill*         0x0000000000001459        0x3 
+ .rodata.str1.4
+                0x000000000000145c       0x80 build.de10lite_scr1/trap.o
+ .rodata.regnames.1818
+                0x00000000000014dc       0x80 build.de10lite_scr1/trap.o
+ .rodata.HEX_MAP
+                0x000000000000155c       0x30 build.de10lite_scr1/leds.o
+ *(.gnu.linkonce.r.*)
+
+.text           0x00000000000015a0      0x5b8
+                0x00000000000015a0                __TEXT_START__ = .
+ *(.text .text.*)
+ .text.startup.main
+                0x00000000000015a0       0x58 build.de10lite_scr1/riscv_main.o
+                0x00000000000015a0                main
+ .text.sc1f_uart_init
+                0x00000000000015f8       0x40 build.de10lite_scr1/uart.o
+                0x00000000000015f8                sc1f_uart_init
+ .text.sc1f_uart_putchar
+                0x0000000000001638       0x40 build.de10lite_scr1/uart.o
+                0x0000000000001638                putchar
+                0x0000000000001638                sc1f_uart_putchar
+ .text.uart_puts
+                0x0000000000001678       0x4c build.de10lite_scr1/uart.o
+                0x0000000000001678                uart_puts
+ .text.uart_puthex8
+                0x00000000000016c4       0x64 build.de10lite_scr1/uart.o
+                0x00000000000016c4                uart_puthex8
+ .text.uart_puthex32
+                0x0000000000001728       0x48 build.de10lite_scr1/uart.o
+                0x0000000000001728                uart_puthex32
+ .text.uart_putdec
+                0x0000000000001770       0xec build.de10lite_scr1/uart.o
+                0x0000000000001770                uart_putdec
+ .text.print_bad_trap
+                0x000000000000185c      0x184 build.de10lite_scr1/trap.o
+                0x000000000000185c                print_bad_trap
+ .text.bad_trap
+                0x00000000000019e0       0x28 build.de10lite_scr1/trap.o
+                0x00000000000019e0                bad_trap
+ .text.bad_trap_handler
+                0x0000000000001a08       0x28 build.de10lite_scr1/trap.o
+                0x0000000000001a08                bad_trap_handler
+ .text.mcall_trap
+                0x0000000000001a30       0x90 build.de10lite_scr1/trap.o
+                0x0000000000001a30                mcall_trap
+ .text.sc1f_leds_hex.part.0
+                0x0000000000001ac0       0x50 build.de10lite_scr1/leds.o
+ .text.sc1f_leds_init
+                0x0000000000001b10       0x48 build.de10lite_scr1/leds.o
+                0x0000000000001b10                sc1f_leds_init
+ *(.init.text)
+                0x0000000000001b58                __TEXT_END__ = .
+
+.startup        0x000000000000f800      0x254
+ *(.startup)
+ .startup       0x000000000000f800      0x254 build.de10lite_scr1/boot.o
+                0x000000000000f8bc                _hart_halt
+
+.vectors        0x000000000000ff00       0xc0
+ *(.vectors)
+ .vectors       0x000000000000ff00       0xbc build.de10lite_scr1/boot.o
+                0x000000000000ff00                _start
+ FILL mask 0x00000000
+                0x000000000000ffbc        0x4 LONG 0x0
+
+.rela.dyn       0x000000000000ffc0        0x0
+ .rela.startup  0x000000000000ffc0        0x0 build.de10lite_scr1/riscv_main.o
+
+/DISCARD/
+ *(.eh_frame .eh_frame.*)
+OUTPUT(build.de10lite_scr1/riscv_main.elf elf32-littleriscv)
+
+.comment        0x0000000000000000       0x11
+ .comment       0x0000000000000000       0x11 build.de10lite_scr1/riscv_main.o
+                                         0x12 (size before relaxing)
+ .comment       0x0000000000000011       0x12 build.de10lite_scr1/uart.o
+ .comment       0x0000000000000011       0x12 build.de10lite_scr1/trap.o
+ .comment       0x0000000000000011       0x12 build.de10lite_scr1/leds.o
+
+.riscv.attributes
+                0x0000000000000000       0x21
+ .riscv.attributes
+                0x0000000000000000       0x21 build.de10lite_scr1/riscv_main.o
+ .riscv.attributes
+                0x0000000000000021       0x21 build.de10lite_scr1/uart.o
+ .riscv.attributes
+                0x0000000000000042       0x21 build.de10lite_scr1/trap.o
+ .riscv.attributes
+                0x0000000000000063       0x21 build.de10lite_scr1/leds.o
+ .riscv.attributes
+                0x0000000000000084       0x1f build.de10lite_scr1/boot.o
