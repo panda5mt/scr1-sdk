@@ -1,4 +1,5 @@
 #!/bin/bash -eu
+#
 # Compile SCR1 C code on GCC and build SCR1 Soft-core CPU logic Quartus Prime (need wsl on Win10)
 export PATH=$PATH:/opt/riscv/bin
 C_PATH=/opt/riscv/bin
