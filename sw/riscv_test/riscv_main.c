@@ -16,7 +16,7 @@ int main(void){
     sc1f_uart_init();
     sc1f_leds_init();
 
-	uart_puts("unko");
+	uart_puts("\r\nHello world!\r\nSCR1!");
 
 	*(volatile unsigned int*)PIO_LED_BASE = 0x000000AA;
 	while(1);
